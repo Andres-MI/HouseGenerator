@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:house_generator/models/house_data.dart';
+import 'package:house_generator/regions.dart';
+
+import '../models/house.dart';
+import '../widgets/attribute_shield.dart';
 
 class NewHouseScreen extends StatefulWidget {
   const NewHouseScreen({Key? key}) : super(key: key);
@@ -8,88 +13,76 @@ class NewHouseScreen extends StatefulWidget {
 }
 
 class _NewHouseScreenState extends State<NewHouseScreen> {
+  var houseData = HouseData();
+  late House house;
+
+  @override
+  void initState() {
+    house = House('', Regions.theNorth, '', '', '', '', '', '', '');
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          AttributeShield(
-            image: Image.asset('assets/images/shield_attr2_icon.png'),
-            value: '22',
-            label: 'Tierras',
-          ),
-          AttributeShield(
-            image: Image.asset('assets/images/shield_attr2_icon.png'),
-            value: '18',
-            label: 'Defensa',
-          ),
-          AttributeShield(
-            image: Image.asset('assets/images/shield_attr2_icon.png'),
-            value: '20',
-            label: 'Influencia',
-          ),
-          AttributeShield(
-            image: Image.asset('assets/images/shield_attr2_icon.png'),
-            value: '18',
-            label: 'Ley',
-          ),
-          AttributeShield(
-            image: Image.asset('assets/images/shield_attr2_icon.png'),
-            value: '22',
-            label: 'Población',
-          ),
-          AttributeShield(
-            image: Image.asset('assets/images/shield_attr2_icon.png'),
-            value: '24',
-            label: 'Poder',
-          ),
-          AttributeShield(
-            image: Image.asset('assets/images/shield_attr2_icon.png'),
-            value: '21',
-            label: 'Fortuna',
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class AttributeShield extends StatelessWidget {
-  final Image image;
-  final String value;
-  final String label;
-  const AttributeShield({
-    Key? key,
-    required this.image,
-    required this.value,
-    required this.label,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Flexible(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: GestureDetector(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  SizedBox(width: 80, height: 80, child: image),
-                  Text(value)
-                ],
+              AttributeShield(
+                image: Image.asset('assets/images/shield_attr2_icon.png'),
+                value: house.lands,
+                label: 'Tierras',
               ),
-              Text(
-                label,
-                style: const TextStyle(fontWeight: FontWeight.bold),
+              AttributeShield(
+                image: Image.asset('assets/images/shield_attr2_icon.png'),
+                value: house.defense,
+                label: 'Defensa',
+              ),
+              AttributeShield(
+                image: Image.asset('assets/images/shield_attr2_icon.png'),
+                value: house.influence,
+                label: 'Influencia',
+              ),
+              AttributeShield(
+                image: Image.asset('assets/images/shield_attr2_icon.png'),
+                value: house.law,
+                label: 'Ley',
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              AttributeShield(
+                image: Image.asset('assets/images/shield_attr2_icon.png'),
+                value: house.population,
+                label: 'Población',
+              ),
+              AttributeShield(
+                image: Image.asset('assets/images/shield_attr2_icon.png'),
+                value: house.power,
+                label: 'Poder',
+              ),
+              AttributeShield(
+                image: Image.asset('assets/images/shield_attr2_icon.png'),
+                value: house.wealth,
+                label: 'Fortuna',
               )
             ],
           ),
-        ),
+          const SizedBox(height: 32.0),
+          ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  house = houseData.createHouse();
+                });
+              },
+              child: const Text('Generar nueva casa'))
+        ],
       ),
     );
   }
