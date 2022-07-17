@@ -26,6 +26,7 @@ class _NewHouseScreenState extends State<NewHouseScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: const Text('Generador de Casas'),
           backgroundColor: Colors.lightBlueAccent,
@@ -34,6 +35,10 @@ class _NewHouseScreenState extends State<NewHouseScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 32.0),
+              child: TextField(decoration: InputDecoration(hintText: 'Nombre de la casa'),),
+            ),
             DropdownButton(
                 value: _selectedRegion,
                 items: Regions.values.map((region) {
