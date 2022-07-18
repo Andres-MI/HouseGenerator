@@ -8,6 +8,7 @@ class HouseData {
   var numberOfDices = 7;
   var isLandedHouse = false;
   Regions region = Regions.theNorth;
+  late House _house;
   int defense = 0,
       influence = 0,
       lands = 0,
@@ -24,7 +25,7 @@ class HouseData {
       wealthBonus = 0;
 
   House get house {
-    return House(
+    _house = House(
         name,
         region,
         (defense + defenseBonus).toString(),
@@ -34,6 +35,7 @@ class HouseData {
         (population + populationBonus).toString(),
         (power + powerBonus).toString(),
         (wealth + wealthBonus).toString());
+    return _house;
   }
 
   House createHouse() {
@@ -41,12 +43,17 @@ class HouseData {
     return house;
   }
 
-  void changeHouseType(bool isLandedHouse) {
+  House setHouseName({required String name}){
+    this.name = name;
+    return house;
+  }
+
+  void changeHouseType({required bool isLandedHouse}) {
     this.isLandedHouse = isLandedHouse;
     numberOfDices = 5;
   }
 
-  House changeRegion(Regions region) {
+  House changeRegion({required Regions region}) {
     this.region = region;
     changeRegionValues(region);
     return house;
@@ -71,6 +78,17 @@ class HouseData {
       value = value + (min + random.nextInt(max - min));
     }
     return value.toInt();
+  }
+
+  House resetHouseValues(){
+    defense = 0;
+    influence = 0;
+    lands = 0;
+    law = 0;
+    population = 0;
+    power = 0;
+    wealth = 0;
+    return house;
   }
 
   void changeRegionValues(Regions region) {

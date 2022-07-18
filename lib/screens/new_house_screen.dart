@@ -37,7 +37,9 @@ class _NewHouseScreenState extends State<NewHouseScreen> {
           children: [
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 32.0),
-              child: TextField(decoration: InputDecoration(hintText: 'Nombre de la casa'),),
+              child: TextField(
+                decoration: InputDecoration(hintText: 'Nombre de la casa'),
+              ),
             ),
             DropdownButton(
                 value: _selectedRegion,
@@ -48,7 +50,7 @@ class _NewHouseScreenState extends State<NewHouseScreen> {
                 onChanged: (Regions? newValue) {
                   setState(() {
                     _selectedRegion = newValue!;
-                    house = houseData.changeRegion(newValue);
+                    house = houseData.changeRegion(region: newValue);
                   });
                 }),
             const SizedBox(height: 32.0),

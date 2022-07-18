@@ -17,7 +17,7 @@ extension RegionExtension on Regions {
     Regions.riverlands: 'Las Tierras de los Ríos',
     Regions.valeOfArryn: 'El Valle de Arryn',
     Regions.ironIsland: 'Las Islas del Hierro',
-    Regions.crownlands: 'Las Tierras de la Corona',
+    Regions.crownlands: 'Desembarco del Rey',
     Regions.westerlands: 'Las Tierras del Oeste',
     Regions.dragonstone: 'Rocadragón',
     Regions.theReach: 'El Dominio',
