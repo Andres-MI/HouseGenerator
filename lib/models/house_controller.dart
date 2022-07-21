@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:house_generator/models/house.dart';
 import 'package:house_generator/regions.dart';
 
-class HouseData {
+class HouseController {
   var name = '';
   var numberOfDices = 7;
   var isLandedHouse = false;
@@ -36,6 +36,10 @@ class HouseData {
         (power + powerBonus).toString(),
         (wealth + wealthBonus).toString());
     return _house;
+  }
+
+  void setHouse({required House house}){
+    _house = house;
   }
 
   House createHouse() {

@@ -24,8 +24,10 @@ class MyHomePage extends StatelessWidget {
               ),
               ImageButton(
                 image: Image.asset('assets/images/pj_icon.png'),
-                label: 'Nuevo PJ',
-                onPressed: () {},
+                label: 'InheritedWidget',
+                onPressed: () {
+
+                },
               ),
             ],
           ),

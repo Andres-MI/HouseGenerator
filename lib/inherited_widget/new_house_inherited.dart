@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:house_generator/models/house_controller.dart';
 import 'package:house_generator/regions.dart';
 
 import '../models/house.dart';
@@ -13,15 +12,10 @@ class NewHouseScreen extends StatefulWidget {
 }
 
 class _NewHouseScreenState extends State<NewHouseScreen> {
-  var houseData = HouseController();
   late House house;
   Regions? _selectedRegion;
 
-  @override
-  void initState() {
-    house = House('', Regions.theNorth, '', '', '', '', '', '', '');
-    super.initState();
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +44,6 @@ class _NewHouseScreenState extends State<NewHouseScreen> {
                 onChanged: (Regions? newValue) {
                   setState(() {
                     _selectedRegion = newValue!;
-                    house = houseData.changeRegion(region: newValue);
                   });
                 }),
             const SizedBox(height: 32.0),
@@ -103,7 +96,6 @@ class _NewHouseScreenState extends State<NewHouseScreen> {
             ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    house = houseData.createHouse();
                   });
                 },
                 child: const Text('Generar nueva casa'))
@@ -111,8 +103,6 @@ class _NewHouseScreenState extends State<NewHouseScreen> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            houseData.setHouse(house: house);
-            Navigator.pushNamed(context, '/house_modifications', arguments: houseData);
           },
           tooltip: 'Increment',
           child: const Icon(Icons.arrow_forward),
