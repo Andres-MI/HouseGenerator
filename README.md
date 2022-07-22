@@ -1,6 +1,6 @@
-# house_generator
+# House Generator Playgrounds
 
-A new Flutter project.
+Flutter playground where I apply different state management techniques to a real life project
 
 ## Getting Started
 
