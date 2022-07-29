@@ -1,0 +1,13 @@
+{
+    "helloWorld": "¡Hola Mundo!",
+    "generatorTitle": "Generador de Casa",
+    "nameHint": "Nombre de la casa",
+    "generateText": "Generar nueva casa",
+    "lands": "Tierras",
+    "defense": "Defensa",
+    "influence": "Influencia",
+    "law": "Ley",
+    "population": "Población",
+    "power": "Poder",
+    "wealth": "Riqueza"
+}

@@ -1,0 +1,24 @@
+{
+    "@@locale": "en",
+    "helloWorld": "Hello World!",
+    "@helloWorld": {
+        "description": "The conventional newborn programmer greeting"
+    },
+    "generatorTitle": "House Generator",
+    "nameHint": "House name",
+    "generateText": "Generate new house",
+    "lands": "Lands",
+    "@lands": {},
+    "defense": "Defense",
+    "@defense": {},
+    "influence": "Influence",
+    "@influence": {},
+    "law": "Law",
+    "@law": {},
+    "population": "Population",
+    "@population": {},
+    "power": "Power",
+    "@power": {},
+    "wealth": "Wealth",
+    "@wealth": {}
+}

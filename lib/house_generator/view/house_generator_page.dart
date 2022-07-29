@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:house_generator/l10n/l10n.dart';
 
 import '../../widgets/attribute_shield.dart';
 
@@ -7,20 +8,21 @@ class HouseGeneratorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          title: const Text('Generador de Casas'),
+          title: Text(l10n.generatorTitle),
           backgroundColor: Colors.lightBlueAccent,
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 32.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: TextField(
-                decoration: InputDecoration(hintText: 'Nombre de la casa'),
+                decoration: InputDecoration(hintText: l10n.nameHint),
               ),
             ),
             // DropdownButton(
@@ -37,39 +39,39 @@ class HouseGeneratorPage extends StatelessWidget {
             const SizedBox(height: 32.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 AttributeShield(
                   value: "21",
-                  label: 'Tierras',
+                  label: l10n.lands,
                 ),
                 AttributeShield(
                   value: "30",
-                  label: 'Defensa',
+                  label: l10n.defense,
                 ),
                 AttributeShield(
                   value: "20",
-                  label: 'Influencia',
+                  label: l10n.influence,
                 ),
                 AttributeShield(
                   value: "18",
-                  label: 'Ley',
+                  label: l10n.law,
                 ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 AttributeShield(
                   value: "18",
-                  label: 'Población',
+                  label: l10n.population,
                 ),
                 AttributeShield(
                   value: "27",
-                  label: 'Poder',
+                  label: l10n.power,
                 ),
                 AttributeShield(
                   value: "25",
-                  label: 'Fortuna',
+                  label: l10n.wealth,
                 )
               ],
             ),
@@ -77,7 +79,7 @@ class HouseGeneratorPage extends StatelessWidget {
             ElevatedButton(
                 onPressed: () {
                 },
-                child: const Text('Generar nueva casa'))
+                child: Text(l10n.generatorTitle))
           ],
         ),
         floatingActionButton: FloatingActionButton(
