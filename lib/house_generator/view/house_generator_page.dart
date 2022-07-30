@@ -1,10 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:house_generator/house_generator/cubit/house_cubit.dart';
 import 'package:house_generator/l10n/l10n.dart';
 
 import '../../widgets/attribute_shield.dart';
 
 class HouseGeneratorPage extends StatelessWidget {
   const HouseGeneratorPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => HouseCubit(0),
+      child: const HouseGeneratorView(),
+    );
+  }
+}
+
+class HouseGeneratorView extends StatelessWidget {
+  const HouseGeneratorView({
+    Key? key,
+  }) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
