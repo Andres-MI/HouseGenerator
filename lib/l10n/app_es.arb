@@ -3,11 +3,23 @@
     "generatorTitle": "Generador de Casa",
     "nameHint": "Nombre de la casa",
     "generateText": "Generar nueva casa",
+
     "lands": "Tierras",
     "defense": "Defensa",
     "influence": "Influencia",
     "law": "Ley",
     "population": "Población",
     "power": "Poder",
-    "wealth": "Riqueza"
+    "wealth": "Riqueza",
+
+    "theNorth": "El Norte",
+    "riverlands": "Las Tierras de los ríos",
+    "valeOfArryn": "El Valle de Arryn",
+    "ironIslands": "Las Islas del Hierro",
+    "crownlands": "Desembarco del Rey",
+    "westerlands": "Las Tierras del oeste",
+    "dragonstone": "Rocadragón",
+    "theReach": "El Dominio",
+    "stormlands": "Las Tierras de la tormenta",
+    "dorne": "Dorne"
 }

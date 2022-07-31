@@ -4,9 +4,11 @@
     "@helloWorld": {
         "description": "The conventional newborn programmer greeting"
     },
+
     "generatorTitle": "House Generator",
     "nameHint": "House name",
     "generateText": "Generate new house",
+
     "lands": "Lands",
     "@lands": {},
     "defense": "Defense",
@@ -20,5 +22,16 @@
     "power": "Power",
     "@power": {},
     "wealth": "Wealth",
-    "@wealth": {}
+    "@wealth": {},
+
+    "theNorth": "The North",
+    "riverlands": "The Riverlands",
+    "valeOfArryn": "The Vale of Arryn",
+    "ironIslands": "The Iron Islands",
+    "crownlands": "King's Landing",
+    "westerlands": "The Westerlands",
+    "dragonstone": "DragonStone",
+    "theReach": "The Reach",
+    "stormlands": "The Stormlands",
+    "dorne": "Dorne"
 }
