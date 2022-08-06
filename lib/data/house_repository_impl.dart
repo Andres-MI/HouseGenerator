@@ -1,45 +1,26 @@
-import 'dart:math';
-
 import 'package:house_generator/data/house_local_data_source.dart';
+import 'package:house_generator/domain/attributes.dart';
 
-import '../domain/house.dart';
+import '../core/regions.dart';
 import '../domain/house_repository.dart';
 
-class HouseRepositoryImpl implements HouseRepository{
-
+class HouseRepositoryImpl implements HouseRepository {
   final HouseLocalDataSource localDataSource;
 
   HouseRepositoryImpl({required this.localDataSource});
 
   @override
-  House createHouse() {
-    // TODO: implement createHouse
-    throw UnimplementedError();
+  Attributes createHouse() {
+    return localDataSource.getHouseValues();
   }
 
   @override
-  House createLandedHouse() {
-    // TODO: implement createLandedHouse
-    throw UnimplementedError();
-  }
-
-  int getDiceValue({int numberOfDices = 7}) {
-    Random random = Random();
-    int min = 1;
-    int max = 7;
-    num value = 0;
-    for (int i = 0; i < numberOfDices; i++) {
-      value = value + (min + random.nextInt(max - min));
-    }
-    return value.toInt();
+  Attributes createLandedHouse() {
+    return localDataSource.getLandedHouseValues();
   }
 
   @override
-  changeRegion() {
-    // TODO: implement changeRegion
-    throw UnimplementedError();
+  Attributes changeRegion({required Regions region}) {
+    return localDataSource.getRegionValues(region: region);
   }
-
-
-
 }

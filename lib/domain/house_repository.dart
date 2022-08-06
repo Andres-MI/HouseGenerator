@@ -1,7 +1,9 @@
-import 'house.dart';
+import 'package:house_generator/domain/attributes.dart';
+
+import '../core/regions.dart';
 
 abstract class HouseRepository {
-  House createHouse();
-  House createLandedHouse();
-  changeRegion();
+  Attributes createHouse();
+  Attributes createLandedHouse();
+  Attributes changeRegion({required Regions region});
 }
