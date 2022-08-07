@@ -1,10 +1,10 @@
-import '../core/attributes_map.dart';
+import 'package:house_generator/domain/attributes.dart';
 import '../core/regions.dart';
 
 class House {
   final String name;
   final Regions region;
-  final AttributesMap attributes;
+  final Attributes attributes;
   final bool isLandedHouse;
   final String? lordHouse;
 

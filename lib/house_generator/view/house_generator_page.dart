@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:house_generator/house_generator/cubit/house_cubit.dart';
+import 'package:house_generator/data/house_local_data_source.dart';
+import 'package:house_generator/data/house_repository_impl.dart';
+import 'package:house_generator/house_generator/cubit/house_generator_cubit.dart';
 import 'package:house_generator/l10n/l10n.dart';
 
 import '../../widgets/attribute_shield.dart';
@@ -11,7 +13,9 @@ class HouseGeneratorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => HouseCubit(0),
+      //TODO: Inject these dependencies
+      create: (_) => HouseGeneratorCubit(
+          HouseRepositoryImpl(localDataSource: HouseLocalDataSourceImpl())),
       child: const HouseGeneratorView(),
     );
   }
@@ -21,7 +25,6 @@ class HouseGeneratorView extends StatelessWidget {
   const HouseGeneratorView({
     Key? key,
   }) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -93,15 +96,11 @@ class HouseGeneratorView extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 32.0),
-            ElevatedButton(
-                onPressed: () {
-                },
-                child: Text(l10n.generatorTitle))
+            ElevatedButton(onPressed: () {}, child: Text(l10n.generatorTitle))
           ],
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-          },
+          onPressed: () {},
           tooltip: 'Increment',
           child: const Icon(Icons.arrow_forward),
         ));
