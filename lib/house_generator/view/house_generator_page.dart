@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:house_generator/data/house_local_data_source.dart';
 import 'package:house_generator/data/house_repository_impl.dart';
+import 'package:house_generator/domain/attributes.dart';
 import 'package:house_generator/house_generator/cubit/house_generator_cubit.dart';
 import 'package:house_generator/l10n/l10n.dart';
 
+import '../../core/regions.dart';
 import '../../widgets/attribute_shield.dart';
 
 class HouseGeneratorPage extends StatelessWidget {
@@ -13,18 +15,41 @@ class HouseGeneratorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      //TODO: Inject these dependencies
-      create: (_) => HouseGeneratorCubit(
-          HouseRepositoryImpl(localDataSource: HouseLocalDataSourceImpl())),
-      child: const HouseGeneratorView(),
-    );
+        //TODO: Inject these dependencies
+        create: (_) => HouseGeneratorCubit(
+            HouseRepositoryImpl(localDataSource: HouseLocalDataSourceImpl())),
+        child: BlocBuilder<HouseGeneratorCubit, HouseGeneratorState>(
+          builder: (context, state) {
+            if (state is GeneratorInitial || state is GeneratorLoading) {
+              return HouseGeneratorView(
+                attributes: Attributes(
+                    lands: 0,
+                    defense: 0,
+                    influence: 0,
+                    law: 0,
+                    population: 0,
+                    power: 0,
+                    wealth: 0),
+              );
+            } else if (state is GeneratorReceived) {
+              return HouseGeneratorView(attributes: state.attributes);
+            } else {
+              return Container();
+            }
+          },
+        ));
   }
 }
 
 class HouseGeneratorView extends StatelessWidget {
   const HouseGeneratorView({
     Key? key,
+    required this.attributes,
+    this.selectedRegion = Regions.none,
   }) : super(key: key);
+
+  final Attributes attributes;
+  final Regions selectedRegion;
 
   @override
   Widget build(BuildContext context) {
@@ -45,35 +70,35 @@ class HouseGeneratorView extends StatelessWidget {
                 decoration: InputDecoration(hintText: l10n.nameHint),
               ),
             ),
-            // DropdownButton(
-            //     value: _selectedRegion,
-            //     items: Regions.values.map((region) {
-            //       return DropdownMenuItem(
-            //           value: region, child: Text(region.name!));
-            //     }).toList(),
-            //     onChanged: (Regions? newValue) {
-            //       setState(() {
-            //         _selectedRegion = newValue!;
-            //       });
-            //     }),
+            DropdownButton(
+                value: selectedRegion,
+                items: Regions.values.map((region) {
+                  return DropdownMenuItem(
+                      value: region, child: Text(region.name ?? ''));
+                }).toList(),
+                onChanged: (newValue) {
+                  context
+                      .read<HouseGeneratorCubit>()
+                      .changeRegion(region: newValue as Regions);
+                }),
             const SizedBox(height: 32.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AttributeShield(
-                  value: "21",
+                  value: attributes.lands.toString(),
                   label: l10n.lands,
                 ),
                 AttributeShield(
-                  value: "30",
+                  value: attributes.defense.toString(),
                   label: l10n.defense,
                 ),
                 AttributeShield(
-                  value: "20",
+                  value: attributes.influence.toString(),
                   label: l10n.influence,
                 ),
                 AttributeShield(
-                  value: "18",
+                  value: attributes.law.toString(),
                   label: l10n.law,
                 ),
               ],
@@ -82,26 +107,29 @@ class HouseGeneratorView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AttributeShield(
-                  value: "18",
+                  value: attributes.population.toString(),
                   label: l10n.population,
                 ),
                 AttributeShield(
-                  value: "27",
+                  value: attributes.power.toString(),
                   label: l10n.power,
                 ),
                 AttributeShield(
-                  value: "25",
+                  value: attributes.wealth.toString(),
                   label: l10n.wealth,
                 )
               ],
             ),
             const SizedBox(height: 32.0),
-            ElevatedButton(onPressed: () {}, child: Text(l10n.generatorTitle))
+            ElevatedButton(
+                onPressed: () {
+                  context.read<HouseGeneratorCubit>().getHouseValues();
+                },
+                child: Text(l10n.generatorTitle))
           ],
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
-          tooltip: 'Increment',
           child: const Icon(Icons.arrow_forward),
         ));
   }
