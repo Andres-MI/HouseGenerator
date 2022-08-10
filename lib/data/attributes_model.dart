@@ -2,7 +2,8 @@ import '../domain/attributes.dart';
 
 class AttributesModel extends Attributes {
   AttributesModel(
-      {required super.lands,
+      {super.region,
+      required super.lands,
       required super.defense,
       required super.influence,
       required super.law,

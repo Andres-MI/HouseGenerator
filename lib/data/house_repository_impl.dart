@@ -7,20 +7,26 @@ import '../domain/house_repository.dart';
 class HouseRepositoryImpl implements HouseRepository {
   final HouseLocalDataSource localDataSource;
 
+  Attributes? attributes;
+  Attributes? regionAttributes;
+
   HouseRepositoryImpl({required this.localDataSource});
 
   @override
   Attributes createHouse() {
-    return localDataSource.getHouseValues();
+    attributes = localDataSource.getHouseValues();
+    return attributes! + (regionAttributes ?? localDataSource.getEmptyValues());
   }
 
   @override
   Attributes createLandedHouse() {
-    return localDataSource.getLandedHouseValues();
+    attributes = localDataSource.getLandedHouseValues();
+    return attributes! + (regionAttributes ?? localDataSource.getEmptyValues());
   }
 
   @override
   Attributes changeRegion({required Regions region}) {
-    return localDataSource.getRegionValues(region: region);
+    regionAttributes = localDataSource.getRegionValues(region: region);
+    return (attributes ?? localDataSource.getEmptyValues()) + regionAttributes!;
   }
 }

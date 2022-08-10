@@ -45,14 +45,13 @@ class HouseGeneratorView extends StatelessWidget {
   const HouseGeneratorView({
     Key? key,
     required this.attributes,
-    this.selectedRegion = Regions.none,
   }) : super(key: key);
 
   final Attributes attributes;
-  final Regions selectedRegion;
 
   @override
   Widget build(BuildContext context) {
+    final Regions selectedRegion = attributes.region ?? Regions.none;
     final l10n = context.l10n;
     return Scaffold(
         resizeToAvoidBottomInset: false,
@@ -70,6 +69,7 @@ class HouseGeneratorView extends StatelessWidget {
                 decoration: InputDecoration(hintText: l10n.nameHint),
               ),
             ),
+            const SizedBox(height: 32.0),
             DropdownButton(
                 value: selectedRegion,
                 items: Regions.values.map((region) {

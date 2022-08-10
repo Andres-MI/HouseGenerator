@@ -14,6 +14,7 @@ enum Regions {
 
 extension RegionExtension on Regions {
   static const names = {
+    Regions.none: 'Selecciona una región',
     Regions.theNorth: 'El Norte',
     Regions.riverlands: 'Las Tierras de los Ríos',
     Regions.valeOfArryn: 'El Valle de Arryn',

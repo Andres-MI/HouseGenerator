@@ -10,6 +10,8 @@ abstract class HouseLocalDataSource {
   AttributesModel getLandedHouseValues();
 
   AttributesModel getRegionValues({required Regions region});
+
+  AttributesModel getEmptyValues();
 }
 
 class HouseLocalDataSourceImpl implements HouseLocalDataSource {
@@ -54,6 +56,7 @@ class HouseLocalDataSourceImpl implements HouseLocalDataSource {
     switch (region) {
       case Regions.theNorth:
         return AttributesModel(
+            region: region,
             lands: 20,
             defense: 5,
             influence: 10,
@@ -63,6 +66,7 @@ class HouseLocalDataSourceImpl implements HouseLocalDataSource {
             wealth: -5);
       case Regions.riverlands:
         return AttributesModel(
+            region: region,
             lands: 5,
             defense: -5,
             influence: -5,
@@ -72,6 +76,7 @@ class HouseLocalDataSourceImpl implements HouseLocalDataSource {
             wealth: 5);
       case Regions.valeOfArryn:
         return AttributesModel(
+            region: region,
             lands: -5,
             defense: 20,
             influence: 10,
@@ -81,6 +86,7 @@ class HouseLocalDataSourceImpl implements HouseLocalDataSource {
             wealth: 0);
       case Regions.ironIsland:
         return AttributesModel(
+            region: region,
             lands: -5,
             defense: 10,
             influence: -5,
@@ -90,6 +96,7 @@ class HouseLocalDataSourceImpl implements HouseLocalDataSource {
             wealth: 0);
       case Regions.crownlands:
         return AttributesModel(
+            region: region,
             lands: -5,
             defense: 5,
             influence: -5,
@@ -99,6 +106,7 @@ class HouseLocalDataSourceImpl implements HouseLocalDataSource {
             wealth: -5);
       case Regions.westerlands:
         return AttributesModel(
+            region: region,
             lands: -5,
             defense: -5,
             influence: 10,
@@ -108,6 +116,7 @@ class HouseLocalDataSourceImpl implements HouseLocalDataSource {
             wealth: 20);
       case Regions.dragonstone:
         return AttributesModel(
+            region: region,
             lands: -5,
             defense: 20,
             influence: -5,
@@ -117,6 +126,7 @@ class HouseLocalDataSourceImpl implements HouseLocalDataSource {
             wealth: -5);
       case Regions.theReach:
         return AttributesModel(
+            region: region,
             lands: 0,
             defense: -5,
             influence: 10,
@@ -126,6 +136,7 @@ class HouseLocalDataSourceImpl implements HouseLocalDataSource {
             wealth: 5);
       case Regions.stormlands:
         return AttributesModel(
+            region: region,
             lands: -5,
             defense: 5,
             influence: 0,
@@ -135,6 +146,7 @@ class HouseLocalDataSourceImpl implements HouseLocalDataSource {
             wealth: 0);
       case Regions.dorne:
         return AttributesModel(
+            region: region,
             lands: 10,
             defense: 0,
             influence: -5,
@@ -144,6 +156,7 @@ class HouseLocalDataSourceImpl implements HouseLocalDataSource {
             wealth: 0);
       case Regions.none:
         return AttributesModel(
+            region: region,
             lands: 0,
             defense: 0,
             influence: 0,
@@ -152,5 +165,18 @@ class HouseLocalDataSourceImpl implements HouseLocalDataSource {
             power: 0,
             wealth: 0);
     }
+  }
+
+  @override
+  AttributesModel getEmptyValues() {
+    return AttributesModel(
+        region: Regions.none,
+        lands: 0,
+        defense: 0,
+        influence: 0,
+        law: 0,
+        population: 0,
+        power: 0,
+        wealth: 0);
   }
 }
