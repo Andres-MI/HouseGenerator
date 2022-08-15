@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 class AttributeShield extends StatelessWidget {
   final String value;
   final String label;
+  final double size;
+
   const AttributeShield({
     Key? key,
     required this.value,
     required this.label,
+    this.size = 80,
   }) : super(key: key);
 
   @override
@@ -21,8 +24,8 @@ class AttributeShield extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 SizedBox(
-                    width: 80,
-                    height: 80,
+                    width: size,
+                    height: size,
                     child: Image.asset('assets/images/shield_attr_icon.png')),
                 Text(value)
               ],

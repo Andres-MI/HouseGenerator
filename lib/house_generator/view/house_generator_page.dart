@@ -134,12 +134,6 @@ class HouseGeneratorView extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            // context.read<HouseGeneratorCubit>().saveHouse(
-            //     house: House(
-            //         name: myController.text,
-            //         region: selectedRegion,
-            //         attributes: attributes,
-            //         isLandedHouse: false));
             Navigator.pushNamed(context, '/house_details',
                 arguments: House(
                     name: myController.text,
