@@ -14,6 +14,24 @@ class Attributes {
       required this.power,
       required this.wealth});
 
+  Attributes copyWith(
+      {int? lands,
+      int? defense,
+      int? influence,
+      int? law,
+      int? population,
+      int? power,
+      int? wealth}) {
+    return Attributes(
+        lands: lands ?? this.lands,
+        defense: defense ?? this.defense,
+        influence: influence ?? this.influence,
+        law: law ?? this.law,
+        population: population ?? this.population,
+        power: power ?? this.power,
+        wealth: wealth ?? this.wealth);
+  }
+
   Attributes operator +(Attributes other) {
     return Attributes(
       region: (other.region ?? region ?? Regions.none),

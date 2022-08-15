@@ -15,4 +15,12 @@ class House {
     required this.isLandedHouse,
     this.lordHouse,
   });
+
+  House copyWith({String? name, Attributes? attributes}) {
+    return House(
+        name: name ?? this.name,
+        region: region,
+        attributes: attributes ?? this.attributes,
+        isLandedHouse: isLandedHouse);
+  }
 }

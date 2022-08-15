@@ -11,6 +11,8 @@ abstract class HouseLocalDataSource {
 
   AttributesModel getRegionValues({required Regions region});
 
+  int increaseValues({required int value});
+
   AttributesModel getEmptyValues();
 }
 
@@ -178,5 +180,10 @@ class HouseLocalDataSourceImpl implements HouseLocalDataSource {
         population: 0,
         power: 0,
         wealth: 0);
+  }
+
+  @override
+  int increaseValues({required int value}) {
+    return value + getDiceValue(numberOfDices: 1);
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:house_generator/data/house_local_data_source.dart';
 import 'package:house_generator/data/house_repository_impl.dart';
 import 'package:house_generator/domain/attributes.dart';
+import 'package:house_generator/domain/house.dart';
 import 'package:house_generator/house_generator/cubit/house_generator_cubit.dart';
 import 'package:house_generator/l10n/l10n.dart';
 
@@ -51,8 +52,10 @@ class HouseGeneratorView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final myController = TextEditingController();
     final Regions selectedRegion = attributes.region ?? Regions.none;
     final l10n = context.l10n;
+
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
@@ -66,6 +69,7 @@ class HouseGeneratorView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
               child: TextField(
+                controller: myController,
                 decoration: InputDecoration(hintText: l10n.nameHint),
               ),
             ),
@@ -125,11 +129,24 @@ class HouseGeneratorView extends StatelessWidget {
                 onPressed: () {
                   context.read<HouseGeneratorCubit>().getHouseValues();
                 },
-                child: Text(l10n.generatorTitle))
+                child: Text(l10n.generateText))
           ],
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            // context.read<HouseGeneratorCubit>().saveHouse(
+            //     house: House(
+            //         name: myController.text,
+            //         region: selectedRegion,
+            //         attributes: attributes,
+            //         isLandedHouse: false));
+            Navigator.pushNamed(context, '/house_details',
+                arguments: House(
+                    name: myController.text,
+                    region: selectedRegion,
+                    attributes: attributes,
+                    isLandedHouse: false));
+          },
           child: const Icon(Icons.arrow_forward),
         ));
   }
