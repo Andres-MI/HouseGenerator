@@ -71,9 +71,7 @@ class HouseDetailsWidget extends StatelessWidget {
                   label: l10n.lands,
                 ),
                 onTap: () {
-                  context
-                      .read<HouseDetailsCubit>()
-                      .increaseValue(attr: house.attributes, attrPosition: 0);
+                  showConfirmDialog(context: context, attrPosition: 0);
                 },
               ),
               GestureDetector(
@@ -82,9 +80,7 @@ class HouseDetailsWidget extends StatelessWidget {
                     label: l10n.defense,
                   ),
                   onTap: () {
-                    context
-                        .read<HouseDetailsCubit>()
-                        .increaseValue(attr: house.attributes, attrPosition: 1);
+                    showConfirmDialog(context: context, attrPosition: 1);
                   }),
               GestureDetector(
                   child: AttributeShield(
@@ -92,9 +88,7 @@ class HouseDetailsWidget extends StatelessWidget {
                     label: l10n.influence,
                   ),
                   onTap: () {
-                    context
-                        .read<HouseDetailsCubit>()
-                        .increaseValue(attr: house.attributes, attrPosition: 2);
+                    showConfirmDialog(context: context, attrPosition: 2);
                   }),
               GestureDetector(
                   child: AttributeShield(
@@ -102,9 +96,7 @@ class HouseDetailsWidget extends StatelessWidget {
                     label: l10n.law,
                   ),
                   onTap: () {
-                    context
-                        .read<HouseDetailsCubit>()
-                        .increaseValue(attr: house.attributes, attrPosition: 3);
+                    showConfirmDialog(context: context, attrPosition: 3);
                   }),
             ],
           ),
@@ -117,9 +109,7 @@ class HouseDetailsWidget extends StatelessWidget {
                     label: l10n.population,
                   ),
                   onTap: () {
-                    context
-                        .read<HouseDetailsCubit>()
-                        .increaseValue(attr: house.attributes, attrPosition: 4);
+                    showConfirmDialog(context: context, attrPosition: 4);
                   }),
               GestureDetector(
                   child: AttributeShield(
@@ -127,9 +117,7 @@ class HouseDetailsWidget extends StatelessWidget {
                     label: l10n.power,
                   ),
                   onTap: () {
-                    context
-                        .read<HouseDetailsCubit>()
-                        .increaseValue(attr: house.attributes, attrPosition: 5);
+                    showConfirmDialog(context: context, attrPosition: 5);
                   }),
               GestureDetector(
                   child: AttributeShield(
@@ -137,14 +125,39 @@ class HouseDetailsWidget extends StatelessWidget {
                     label: l10n.wealth,
                   ),
                   onTap: () {
-                    context
-                        .read<HouseDetailsCubit>()
-                        .increaseValue(attr: house.attributes, attrPosition: 6);
+                    showConfirmDialog(context: context, attrPosition: 6);
                   })
             ],
           ),
         ],
       ),
     );
+  }
+
+  void showConfirmDialog(
+      {required BuildContext context, required int attrPosition}) {
+    showDialog(
+        context: context,
+        builder: (BuildContext dialogContext) {
+          return AlertDialog(
+            title: Text('¿Quieres incrementar este atributo en 1d6?'),
+            //content: ,
+            actions: [
+              TextButton(
+                onPressed: () {
+                  context.read<HouseDetailsCubit>().increaseValue(
+                      attr: house.attributes, attrPosition: attrPosition);
+                  Navigator.of(dialogContext).pop();
+                },
+                child: Text('Si'),
+              ),
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(dialogContext).pop();
+                  },
+                  child: Text('No'))
+            ],
+          );
+        });
   }
 }
