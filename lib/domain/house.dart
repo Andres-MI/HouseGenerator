@@ -1,6 +1,7 @@
-import 'package:house_generator/core/house_age.dart';
+import 'package:house_generator/core/enums/house_age.dart';
 import 'package:house_generator/domain/attributes.dart';
-import '../core/regions.dart';
+
+import '../core/enums/regions.dart';
 
 class House {
   final String name;

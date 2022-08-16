@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:house_generator/core/house_age.dart';
+import 'package:house_generator/core/enums/house_age.dart';
+import 'package:house_generator/l10n/l10n.dart';
 import 'package:house_generator/data/house_local_data_source.dart';
 import 'package:house_generator/data/house_repository_impl.dart';
 import 'package:house_generator/domain/house.dart';
 import 'package:house_generator/house_generator/cubit/house_details_cubit.dart';
-import 'package:house_generator/l10n/l10n.dart';
 
 import '../../widgets/attribute_shield.dart';
 
@@ -15,7 +15,6 @@ class HouseDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     House house = ModalRoute.of(context)!.settings.arguments as House;
-    final l10n = context.l10n;
     return BlocProvider(
       //TODO: Inject these dependencies
       create: (_) => HouseDetailsCubit(
@@ -55,7 +54,7 @@ class _HouseDetailsWidgetState extends State<HouseDetailsWidget> {
     final l10n = context.l10n;
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Detalles de Casa'),
+          title: Text(l10n.houseHistory),
           backgroundColor: Colors.lightBlueAccent,
         ),
         body: Column(
@@ -142,7 +141,7 @@ class _HouseDetailsWidgetState extends State<HouseDetailsWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Antigüedad de la casa',
+                  l10n.firstFounding,
                   style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(width: 16.0),
@@ -163,7 +162,7 @@ class _HouseDetailsWidgetState extends State<HouseDetailsWidget> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/house_details',
+            Navigator.pushNamed(context, '/house_events',
                 arguments: widget.house.copyWith(age: dropdownValue));
           },
           child: const Icon(Icons.arrow_forward),
@@ -172,11 +171,12 @@ class _HouseDetailsWidgetState extends State<HouseDetailsWidget> {
 
   void showConfirmDialog(
       {required BuildContext context, required int attrPosition}) {
+    final l10n = context.l10n;
     showDialog(
         context: context,
         builder: (BuildContext dialogContext) {
           return AlertDialog(
-            title: Text('¿Quieres incrementar este atributo en 1d6?'),
+            title: Text(l10n.increaseText),
             //content: ,
             actions: [
               TextButton(
@@ -186,13 +186,13 @@ class _HouseDetailsWidgetState extends State<HouseDetailsWidget> {
                       attrPosition: attrPosition);
                   Navigator.of(dialogContext).pop();
                 },
-                child: Text('Si'),
+                child: Text(l10n.yes),
               ),
               TextButton(
                   onPressed: () {
                     Navigator.of(dialogContext).pop();
                   },
-                  child: Text('No'))
+                  child: Text(l10n.no))
             ],
           );
         });

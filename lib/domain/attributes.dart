@@ -1,4 +1,4 @@
-import '../core/regions.dart';
+import '../core/enums/regions.dart';
 
 class Attributes {
   final int lands, defense, influence, law, population, power, wealth;

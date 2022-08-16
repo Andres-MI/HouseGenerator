@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:house_generator/domain/house_repository.dart';
-import '../../core/regions.dart';
+import '../../core/enums/regions.dart';
 import '../../domain/attributes.dart';
 import '../../domain/house.dart';
 part 'house_generator_state.dart';

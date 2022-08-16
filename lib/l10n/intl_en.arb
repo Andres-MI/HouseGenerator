@@ -24,6 +24,7 @@
     "wealth": "Wealth",
     "@wealth": {},
 
+    "noneRegion": "Select a region",
     "theNorth": "The North",
     "riverlands": "The Riverlands",
     "valeOfArryn": "The Vale of Arryn",
@@ -33,5 +34,18 @@
     "dragonstone": "DragonStone",
     "theReach": "The Reach",
     "stormlands": "The Stormlands",
-    "dorne": "Dorne"
+    "dorne": "Dorne",
+
+    "houseHistory": "House History",
+    "firstFounding": "First founding",
+    "ancient": "Ancient",
+    "veryOld": "Very Old",
+    "old": "Old",
+    "established": "Established",
+    "recent": "Recent",
+    "newHouse": "New",
+
+    "increaseText": "Do you want to increase this attribute in 1D6?",
+    "yes": "Yes",
+    "no": "No"
 }

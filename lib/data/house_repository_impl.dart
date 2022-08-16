@@ -1,7 +1,7 @@
 import 'package:house_generator/data/house_local_data_source.dart';
 import 'package:house_generator/domain/attributes.dart';
 
-import '../core/regions.dart';
+import '../core/enums/regions.dart';
 import '../domain/house_repository.dart';
 
 class HouseRepositoryImpl implements HouseRepository {

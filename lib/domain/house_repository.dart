@@ -1,6 +1,6 @@
 import 'package:house_generator/domain/attributes.dart';
 
-import '../core/regions.dart';
+import '../core/enums/regions.dart';
 
 abstract class HouseRepository {
   Attributes createHouse();

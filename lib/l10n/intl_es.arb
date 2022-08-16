@@ -1,4 +1,5 @@
 {
+    "@@locale": "es",
     "helloWorld": "¡Hola Mundo!",
     "generatorTitle": "Generador de Casa",
     "nameHint": "Nombre de la casa",
@@ -12,6 +13,7 @@
     "power": "Poder",
     "wealth": "Riqueza",
 
+    "noneRegion": "Selecciona una región",
     "theNorth": "El Norte",
     "riverlands": "Las Tierras de los ríos",
     "valeOfArryn": "El Valle de Arryn",
@@ -21,5 +23,18 @@
     "dragonstone": "Rocadragón",
     "theReach": "El Dominio",
     "stormlands": "Las Tierras de la tormenta",
-    "dorne": "Dorne"
+    "dorne": "Dorne",
+
+    "houseHistory": "Historia de la Casa",
+    "firstFounding": "Fundación",
+    "ancient": "Ancestral",
+    "veryOld": "Muy Antigua",
+    "old": "Antigua",
+    "established": "Arraigada",
+    "recent": "Reciente",
+    "newHouse": "Nueva",
+
+    "increaseText": "¿Quieres incrementar este atributo en 1D6?",
+    "yes": "Si",
+    "no": "No"
 }

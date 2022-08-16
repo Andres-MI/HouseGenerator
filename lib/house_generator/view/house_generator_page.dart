@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:house_generator/l10n/l10n.dart';
 import 'package:house_generator/data/house_local_data_source.dart';
 import 'package:house_generator/data/house_repository_impl.dart';
 import 'package:house_generator/domain/attributes.dart';
 import 'package:house_generator/domain/house.dart';
 import 'package:house_generator/house_generator/cubit/house_generator_cubit.dart';
-import 'package:house_generator/l10n/l10n.dart';
 
-import '../../core/regions.dart';
+import '../../core/enums/regions.dart';
 import '../../widgets/attribute_shield.dart';
 
 class HouseGeneratorPage extends StatelessWidget {

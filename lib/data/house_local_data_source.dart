@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:house_generator/data/attributes_model.dart';
 
-import '../core/regions.dart';
+import '../core/enums/regions.dart';
 
 abstract class HouseLocalDataSource {
   AttributesModel getHouseValues();
