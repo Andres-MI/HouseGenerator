@@ -4,12 +4,14 @@ class AttributeShield extends StatelessWidget {
   final String value;
   final String label;
   final double size;
+  final double fontSize;
 
   const AttributeShield({
     Key? key,
     required this.value,
     required this.label,
     this.size = 80,
+    this.fontSize = 14,
   }) : super(key: key);
 
   @override
@@ -30,9 +32,16 @@ class AttributeShield extends StatelessWidget {
                 Text(value)
               ],
             ),
-            Text(
-              label,
-              style: const TextStyle(fontWeight: FontWeight.bold),
+            SizedBox(
+              width: size,
+              child: Center(
+                child: Text(
+                  label,
+                  maxLines: 1,
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: fontSize),
+                ),
+              ),
             )
           ],
         ),

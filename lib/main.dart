@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:house_generator/house_generator/view/historical_events_page.dart';
 import 'package:house_generator/house_generator/view/house_details_page.dart';
 import 'package:house_generator/house_generator/view/house_generator_page.dart';
 
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const HouseGeneratorPage(),
         '/house_details': (context) => const HouseDetailsPage(),
+        '/house_events': (context) => HistoricalEvents()
       },
     );
   }
