@@ -89,38 +89,58 @@ class HouseGeneratorView extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                AttributeShield(
-                  value: attributes.lands.toString(),
-                  label: l10n.lands,
+                Expanded(
+                  child: AttributeShield(
+                    value: attributes.lands.toString(),
+                    label: l10n.lands,
+                  ),
                 ),
-                AttributeShield(
-                  value: attributes.defense.toString(),
-                  label: l10n.defense,
+                Expanded(
+                  child: AttributeShield(
+                    value: attributes.defense.toString(),
+                    label: l10n.defense,
+                  ),
                 ),
-                AttributeShield(
-                  value: attributes.influence.toString(),
-                  label: l10n.influence,
+                Expanded(
+                  child: AttributeShield(
+                    value: attributes.influence.toString(),
+                    label: l10n.influence,
+                  ),
                 ),
-                AttributeShield(
-                  value: attributes.law.toString(),
-                  label: l10n.law,
+                Expanded(
+                  child: AttributeShield(
+                    value: attributes.law.toString(),
+                    label: l10n.law,
+                  ),
                 ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                AttributeShield(
-                  value: attributes.population.toString(),
-                  label: l10n.population,
+                const SizedBox(
+                  width: 32.0,
                 ),
-                AttributeShield(
-                  value: attributes.power.toString(),
-                  label: l10n.power,
+                Expanded(
+                  child: AttributeShield(
+                    value: attributes.population.toString(),
+                    label: l10n.population,
+                  ),
                 ),
-                AttributeShield(
-                  value: attributes.wealth.toString(),
-                  label: l10n.wealth,
+                Expanded(
+                  child: AttributeShield(
+                    value: attributes.power.toString(),
+                    label: l10n.power,
+                  ),
+                ),
+                Expanded(
+                  child: AttributeShield(
+                    value: attributes.wealth.toString(),
+                    label: l10n.wealth,
+                  ),
+                ),
+                const SizedBox(
+                  width: 32.0,
                 )
               ],
             ),

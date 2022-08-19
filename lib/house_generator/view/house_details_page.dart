@@ -72,68 +72,88 @@ class _HouseDetailsWidgetState extends State<HouseDetailsWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                GestureDetector(
-                  child: AttributeShield(
-                    value: widget.house.attributes.lands.toString(),
-                    label: l10n.lands,
+                Expanded(
+                  child: GestureDetector(
+                    child: AttributeShield(
+                      value: widget.house.attributes.lands.toString(),
+                      label: l10n.lands,
+                    ),
+                    onTap: () {
+                      showConfirmDialog(context: context, attrPosition: 0);
+                    },
                   ),
-                  onTap: () {
-                    showConfirmDialog(context: context, attrPosition: 0);
-                  },
                 ),
-                GestureDetector(
-                    child: AttributeShield(
-                      value: widget.house.attributes.defense.toString(),
-                      label: l10n.defense,
-                    ),
-                    onTap: () {
-                      showConfirmDialog(context: context, attrPosition: 1);
-                    }),
-                GestureDetector(
-                    child: AttributeShield(
-                      value: widget.house.attributes.influence.toString(),
-                      label: l10n.influence,
-                    ),
-                    onTap: () {
-                      showConfirmDialog(context: context, attrPosition: 2);
-                    }),
-                GestureDetector(
-                    child: AttributeShield(
-                      value: widget.house.attributes.law.toString(),
-                      label: l10n.law,
-                    ),
-                    onTap: () {
-                      showConfirmDialog(context: context, attrPosition: 3);
-                    }),
+                Expanded(
+                  child: GestureDetector(
+                      child: AttributeShield(
+                        value: widget.house.attributes.defense.toString(),
+                        label: l10n.defense,
+                      ),
+                      onTap: () {
+                        showConfirmDialog(context: context, attrPosition: 1);
+                      }),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                      child: AttributeShield(
+                        value: widget.house.attributes.influence.toString(),
+                        label: l10n.influence,
+                      ),
+                      onTap: () {
+                        showConfirmDialog(context: context, attrPosition: 2);
+                      }),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                      child: AttributeShield(
+                        value: widget.house.attributes.law.toString(),
+                        label: l10n.law,
+                      ),
+                      onTap: () {
+                        showConfirmDialog(context: context, attrPosition: 3);
+                      }),
+                ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                GestureDetector(
-                    child: AttributeShield(
-                      value: widget.house.attributes.population.toString(),
-                      label: l10n.population,
-                    ),
-                    onTap: () {
-                      showConfirmDialog(context: context, attrPosition: 4);
-                    }),
-                GestureDetector(
-                    child: AttributeShield(
-                      value: widget.house.attributes.power.toString(),
-                      label: l10n.power,
-                    ),
-                    onTap: () {
-                      showConfirmDialog(context: context, attrPosition: 5);
-                    }),
-                GestureDetector(
-                    child: AttributeShield(
-                      value: widget.house.attributes.wealth.toString(),
-                      label: l10n.wealth,
-                    ),
-                    onTap: () {
-                      showConfirmDialog(context: context, attrPosition: 6);
-                    })
+                const SizedBox(
+                  width: 32.0,
+                ),
+                Expanded(
+                  child: GestureDetector(
+                      child: AttributeShield(
+                        value: widget.house.attributes.population.toString(),
+                        label: l10n.population,
+                      ),
+                      onTap: () {
+                        showConfirmDialog(context: context, attrPosition: 4);
+                      }),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                      child: AttributeShield(
+                        value: widget.house.attributes.power.toString(),
+                        label: l10n.power,
+                      ),
+                      onTap: () {
+                        showConfirmDialog(context: context, attrPosition: 5);
+                      }),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                      child: AttributeShield(
+                        value: widget.house.attributes.wealth.toString(),
+                        label: l10n.wealth,
+                      ),
+                      onTap: () {
+                        showConfirmDialog(context: context, attrPosition: 6);
+                      }),
+                ),
+                const SizedBox(
+                  width: 32.0,
+                ),
               ],
             ),
             const SizedBox(height: 16.0),
@@ -142,7 +162,8 @@ class _HouseDetailsWidgetState extends State<HouseDetailsWidget> {
               children: [
                 Text(
                   l10n.firstFounding,
-                  style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 15.0, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(width: 16.0),
                 DropdownButton(
