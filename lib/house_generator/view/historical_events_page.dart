@@ -4,7 +4,6 @@ import 'package:house_generator/l10n/l10n.dart';
 import 'package:house_generator/widgets/attribute_shield.dart';
 
 import '../../domain/attributes.dart';
-import '../../widgets/small_attribute_shield.dart';
 
 class HistoricalEvents extends StatelessWidget {
   HistoricalEvents({Key? key}) : super(key: key);

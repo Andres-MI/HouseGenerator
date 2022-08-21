@@ -350,6 +350,486 @@ class S {
     );
   }
 
+  /// `Doom`
+  String get doom {
+    return Intl.message(
+      'Doom',
+      name: 'doom',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Defeat`
+  String get defeat {
+    return Intl.message(
+      'Defeat',
+      name: 'defeat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Catastrophe`
+  String get catastrophe {
+    return Intl.message(
+      'Catastrophe',
+      name: 'catastrophe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Madness`
+  String get madness {
+    return Intl.message(
+      'Madness',
+      name: 'madness',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invasion/Revolt`
+  String get invasionRevolt {
+    return Intl.message(
+      'Invasion/Revolt',
+      name: 'invasionRevolt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scandal`
+  String get scandal {
+    return Intl.message(
+      'Scandal',
+      name: 'scandal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Treachery`
+  String get treachery {
+    return Intl.message(
+      'Treachery',
+      name: 'treachery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Decline`
+  String get decline {
+    return Intl.message(
+      'Decline',
+      name: 'decline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Infrastructure`
+  String get infrastructure {
+    return Intl.message(
+      'Infrastructure',
+      name: 'infrastructure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ascent`
+  String get ascent {
+    return Intl.message(
+      'Ascent',
+      name: 'ascent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favor`
+  String get favor {
+    return Intl.message(
+      'Favor',
+      name: 'favor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Victory`
+  String get victory {
+    return Intl.message(
+      'Victory',
+      name: 'victory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Villain`
+  String get villain {
+    return Intl.message(
+      'Villain',
+      name: 'villain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Glory`
+  String get glory {
+    return Intl.message(
+      'Glory',
+      name: 'glory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Conquest`
+  String get conquest {
+    return Intl.message(
+      'Conquest',
+      name: 'conquest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Windfall`
+  String get windfall {
+    return Intl.message(
+      'Windfall',
+      name: 'windfall',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Doom`
+  String get doomDescription {
+    return Intl.message(
+      'Doom',
+      name: 'doomDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Defeat`
+  String get defeatDescription {
+    return Intl.message(
+      'Defeat',
+      name: 'defeatDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Catastrophe`
+  String get catastropheDescription {
+    return Intl.message(
+      'Catastrophe',
+      name: 'catastropheDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Madness`
+  String get madnessDescription {
+    return Intl.message(
+      'Madness',
+      name: 'madnessDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invasion/Revolt`
+  String get invasionRevoltDescription {
+    return Intl.message(
+      'Invasion/Revolt',
+      name: 'invasionRevoltDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scandal`
+  String get scandalDescription {
+    return Intl.message(
+      'Scandal',
+      name: 'scandalDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Treachery`
+  String get treacheryDescription {
+    return Intl.message(
+      'Treachery',
+      name: 'treacheryDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Decline`
+  String get declineDescription {
+    return Intl.message(
+      'Decline',
+      name: 'declineDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Infrastructure`
+  String get infrastructureDescription {
+    return Intl.message(
+      'Infrastructure',
+      name: 'infrastructureDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ascent`
+  String get ascentDescription {
+    return Intl.message(
+      'Ascent',
+      name: 'ascentDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favor`
+  String get favorDescription {
+    return Intl.message(
+      'Favor',
+      name: 'favorDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Victory`
+  String get victoryDescription {
+    return Intl.message(
+      'Victory',
+      name: 'victoryDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Villain`
+  String get villainDescription {
+    return Intl.message(
+      'Villain',
+      name: 'villainDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Glory`
+  String get gloryDescription {
+    return Intl.message(
+      'Glory',
+      name: 'gloryDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Conquest`
+  String get conquestDescription {
+    return Intl.message(
+      'Conquest',
+      name: 'conquestDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Windfall`
+  String get windfallDescription {
+    return Intl.message(
+      'Windfall',
+      name: 'windfallDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Doom`
+  String get doomFounding {
+    return Intl.message(
+      'Doom',
+      name: 'doomFounding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Defeat`
+  String get defeatFounding {
+    return Intl.message(
+      'Defeat',
+      name: 'defeatFounding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Catastrophe`
+  String get catastropheFounding {
+    return Intl.message(
+      'Catastrophe',
+      name: 'catastropheFounding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Madness`
+  String get madnessFounding {
+    return Intl.message(
+      'Madness',
+      name: 'madnessFounding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invasion/Revolt`
+  String get invasionRevoltFounding {
+    return Intl.message(
+      'Invasion/Revolt',
+      name: 'invasionRevoltFounding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scandal`
+  String get scandalFounding {
+    return Intl.message(
+      'Scandal',
+      name: 'scandalFounding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Treachery`
+  String get treacheryFounding {
+    return Intl.message(
+      'Treachery',
+      name: 'treacheryFounding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Decline`
+  String get declineFounding {
+    return Intl.message(
+      'Decline',
+      name: 'declineFounding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Infrastructure`
+  String get infrastructureFounding {
+    return Intl.message(
+      'Infrastructure',
+      name: 'infrastructureFounding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ascent`
+  String get ascentFounding {
+    return Intl.message(
+      'Ascent',
+      name: 'ascentFounding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favor`
+  String get favorFounding {
+    return Intl.message(
+      'Favor',
+      name: 'favorFounding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Victory`
+  String get victoryFounding {
+    return Intl.message(
+      'Victory',
+      name: 'victoryFounding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Villain`
+  String get villainFounding {
+    return Intl.message(
+      'Villain',
+      name: 'villainFounding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Glory`
+  String get gloryFounding {
+    return Intl.message(
+      'Glory',
+      name: 'gloryFounding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Conquest`
+  String get conquestFounding {
+    return Intl.message(
+      'Conquest',
+      name: 'conquestFounding',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Windfall`
+  String get windfallFounding {
+    return Intl.message(
+      'Windfall',
+      name: 'windfallFounding',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Do you want to increase this attribute in 1D6?`
   String get increaseText {
     return Intl.message(
