@@ -510,320 +510,320 @@ class S {
     );
   }
 
-  /// `Doom`
+  /// `Your house suffered a terrible series of mishaps, disasters, and tragedies that nearly erased your family.`
   String get doomDescription {
     return Intl.message(
-      'Doom',
+      'Your house suffered a terrible series of mishaps, disasters, and tragedies that nearly erased your family.',
       name: 'doomDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Defeat`
+  /// `Your family fought a war or smaller conflict but was defeated, losing status, precious resources and influence.`
   String get defeatDescription {
     return Intl.message(
-      'Defeat',
+      'Your family fought a war or smaller conflict but was defeated, losing status, precious resources and influence.',
       name: 'defeatDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Catastrophe`
+  /// `A natural disaster, such as an outbreak of plague, blight, or drought, has diminished your population and ability to control your lands.`
   String get catastropheDescription {
     return Intl.message(
-      'Catastrophe',
+      'A natural disaster, such as an outbreak of plague, blight, or drought, has diminished your population and ability to control your lands.',
       name: 'catastropheDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Madness`
+  /// `A particular figure suffered from some insanity, producing unpredictable results on your house.`
   String get madnessDescription {
     return Intl.message(
-      'Madness',
+      'A particular figure suffered from some insanity, producing unpredictable results on your house.',
       name: 'madnessDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Invasion/Revolt`
+  /// `An external invasion marked a period of collapse, destruction, and ruin. It could also stem from a period of inept rule that led to a widespread smallfolk revolt`
   String get invasionRevoltDescription {
     return Intl.message(
-      'Invasion/Revolt',
+      'An external invasion marked a period of collapse, destruction, and ruin. It could also stem from a period of inept rule that led to a widespread smallfolk revolt',
       name: 'invasionRevoltDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Scandal`
+  /// `Your family was involved in some disaster, a scandal that haunts them still. Good options include spawning a bastard, incest, failed conspiracies, and so on.`
   String get scandalDescription {
     return Intl.message(
-      'Scandal',
+      'Your family was involved in some disaster, a scandal that haunts them still. Good options include spawning a bastard, incest, failed conspiracies, and so on.',
       name: 'scandalDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Treachery`
+  /// `Either you suffered the results of treachery or you were involved in committing a treacherous act. In either case, the historical event stains your family’s name.`
   String get treacheryDescription {
     return Intl.message(
-      'Treachery',
+      'Either you suffered the results of treachery or you were involved in committing a treacherous act. In either case, the historical event stains your family’s name.',
       name: 'treacheryDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Decline`
+  /// `Whether from a poor marriage, a downturn in trade, or a series of tragic losses in a conflict, your house entered a period of decline.`
   String get declineDescription {
     return Intl.message(
-      'Decline',
+      'Whether from a poor marriage, a downturn in trade, or a series of tragic losses in a conflict, your house entered a period of decline.',
       name: 'declineDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Infrastructure`
+  /// `Infrastructure describes a period of peace and prosperity, a moment in your house’s history remembered for growth and expansion.`
   String get infrastructureDescription {
     return Intl.message(
-      'Infrastructure',
+      'Infrastructure describes a period of peace and prosperity, a moment in your house’s history remembered for growth and expansion.',
       name: 'infrastructureDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Ascent`
+  /// `An advantageous marriage, a great deed for a liege lord, heroism in a decisive battle or participation on some historical key event improved the fortunes of your house.`
   String get ascentDescription {
     return Intl.message(
-      'Ascent',
+      'An advantageous marriage, a great deed for a liege lord, heroism in a decisive battle or participation on some historical key event improved the fortunes of your house.',
       name: 'ascentDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Favor`
+  /// `Your family gained the favor of the king, their lord, the Faith, or from some other powerful body. As a result, their fortunes and status improved.`
   String get favorDescription {
     return Intl.message(
-      'Favor',
+      'Your family gained the favor of the king, their lord, the Faith, or from some other powerful body. As a result, their fortunes and status improved.',
       name: 'favorDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Victory`
+  /// `You family achieved an important victory over their enemies. Foes could include ironmen reavers, a King-beyond-the-Wall, or a rival house.`
   String get victoryDescription {
     return Intl.message(
-      'Victory',
+      'You family achieved an important victory over their enemies. Foes could include ironmen reavers, a King-beyond-the-Wall, or a rival house.',
       name: 'victoryDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Villain`
+  /// `Your family produced a character of unspeakable cruelty and wickedness, a villain whose name is still whispered with dread`
   String get villainDescription {
     return Intl.message(
-      'Villain',
+      'Your family produced a character of unspeakable cruelty and wickedness, a villain whose name is still whispered with dread',
       name: 'villainDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Glory`
+  /// `Similar to ascent but it focuses on one figure in your family’s past. A military victory, personal achievement, or a great act of heroism advanced your family’s standing`
   String get gloryDescription {
     return Intl.message(
-      'Glory',
+      'Similar to ascent but it focuses on one figure in your family’s past. A military victory, personal achievement, or a great act of heroism advanced your family’s standing',
       name: 'gloryDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Conquest`
+  /// `Your family fought and defeated an enemy, annexing their lands and holdings to their own.`
   String get conquestDescription {
     return Intl.message(
-      'Conquest',
+      'Your family fought and defeated an enemy, annexing their lands and holdings to their own.',
       name: 'conquestDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Windfall`
+  /// `A boon, a blessing catapulted your family into fame (or infamy). Could be an advantageous marriage, a gift from the king, discovery of new resources on one’s lands, etc`
   String get windfallDescription {
     return Intl.message(
-      'Windfall',
+      'A boon, a blessing catapulted your family into fame (or infamy). Could be an advantageous marriage, a gift from the king, discovery of new resources on one’s lands, etc',
       name: 'windfallDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Doom`
+  /// `Your family might have clawed their way out of the ashes of a destroyed house, maybe being loyal retainers or even just smallfolk that seized the old lord’s holdings.`
   String get doomFounding {
     return Intl.message(
-      'Doom',
+      'Your family might have clawed their way out of the ashes of a destroyed house, maybe being loyal retainers or even just smallfolk that seized the old lord’s holdings.',
       name: 'doomFounding',
       desc: '',
       args: [],
     );
   }
 
-  /// `Defeat`
+  /// `Your family might have been swallowed up by another house and forced to marry into a lesser branch until your original bloodline became all but extinct.`
   String get defeatFounding {
     return Intl.message(
-      'Defeat',
+      'Your family might have been swallowed up by another house and forced to marry into a lesser branch until your original bloodline became all but extinct.',
       name: 'defeatFounding',
       desc: '',
       args: [],
     );
   }
 
-  /// `Catastrophe`
+  /// `Your family may have gained their status through dubious or tragic means, perhaps replacing the previous lords who were wiped out during a catastrophe or were a lesser branch that rose in station as they inherited the holdings of their kin.`
   String get catastropheFounding {
     return Intl.message(
-      'Catastrophe',
+      'Your family may have gained their status through dubious or tragic means, perhaps replacing the previous lords who were wiped out during a catastrophe or were a lesser branch that rose in station as they inherited the holdings of their kin.',
       name: 'catastropheFounding',
       desc: '',
       args: [],
     );
   }
 
-  /// `Madness`
+  /// `Your family was raised by an insane lord or king as appropriate to the period of your first founding.`
   String get madnessFounding {
     return Intl.message(
-      'Madness',
+      'Your family was raised by an insane lord or king as appropriate to the period of your first founding.',
       name: 'madnessFounding',
       desc: '',
       args: [],
     );
   }
 
-  /// `Invasion/Revolt`
+  /// `Your house was born from the strife of an invasion/revolt and came to power in the aftermath.`
   String get invasionRevoltFounding {
     return Intl.message(
-      'Invasion/Revolt',
+      'Your house was born from the strife of an invasion/revolt and came to power in the aftermath.',
       name: 'invasionRevoltFounding',
       desc: '',
       args: [],
     );
   }
 
-  /// `Scandal`
+  /// `Your family was created as a way of covering up a scandal or a crime, like spawning a bastard, incest, failed conspiracies, and so on`
   String get scandalFounding {
     return Intl.message(
-      'Scandal',
+      'Your family was created as a way of covering up a scandal or a crime, like spawning a bastard, incest, failed conspiracies, and so on',
       name: 'scandalFounding',
       desc: '',
       args: [],
     );
   }
 
-  /// `Treachery`
+  /// `Your family gained its status by means of some dark deed, possibly betraying another lord or noble.`
   String get treacheryFounding {
     return Intl.message(
-      'Treachery',
+      'Your family gained its status by means of some dark deed, possibly betraying another lord or noble.',
       name: 'treacheryFounding',
       desc: '',
       args: [],
     );
   }
 
-  /// `Decline`
+  /// ` Your house was probably born from a poor marriage —a desperate lord wedding his daughter to a merchant prince— or of a major branch becoming extinct, leaving the holdings to a lesser branch to rule.`
   String get declineFounding {
     return Intl.message(
-      'Decline',
+      ' Your house was probably born from a poor marriage —a desperate lord wedding his daughter to a merchant prince— or of a major branch becoming extinct, leaving the holdings to a lesser branch to rule.',
       name: 'declineFounding',
       desc: '',
       args: [],
     );
   }
 
-  /// `Infrastructure`
+  /// `Your house was born during a period of expansion under your lord or king’s rule.`
   String get infrastructureFounding {
     return Intl.message(
-      'Infrastructure',
+      'Your house was born during a period of expansion under your lord or king’s rule.',
       name: 'infrastructureFounding',
       desc: '',
       args: [],
     );
   }
 
-  /// `Ascent`
+  /// `Your house was raised from the smallfolk by marriage or through some great act that warranted your elevation to a noble house.`
   String get ascentFounding {
     return Intl.message(
-      'Ascent',
+      'Your house was raised from the smallfolk by marriage or through some great act that warranted your elevation to a noble house.',
       name: 'ascentFounding',
       desc: '',
       args: [],
     );
   }
 
-  /// `Favor`
+  /// `The king likely raised your family to nobility after gaining his, your lord or the Faith's favor.`
   String get favorFounding {
     return Intl.message(
-      'Favor',
+      'The king likely raised your family to nobility after gaining his, your lord or the Faith\'s favor.',
       name: 'favorFounding',
       desc: '',
       args: [],
     );
   }
 
-  /// `Victory`
+  /// `An important victory over their enemies was so great that your family was raised to nobility`
   String get victoryFounding {
     return Intl.message(
-      'Victory',
+      'An important victory over their enemies was so great that your family was raised to nobility',
       name: 'victoryFounding',
       desc: '',
       args: [],
     );
   }
 
-  /// `Villain`
+  /// `Your family won its position by dint of evil, possibly murdering a rival and seizing his lands or birthright.`
   String get villainFounding {
     return Intl.message(
-      'Villain',
+      'Your family won its position by dint of evil, possibly murdering a rival and seizing his lands or birthright.',
       name: 'villainFounding',
       desc: '',
       args: [],
     );
   }
 
-  /// `Glory`
+  /// `Your house was formed as a reward for the great acts of their founder after a military victory, personal achievement,or act of heroism.`
   String get gloryFounding {
     return Intl.message(
-      'Glory',
+      'Your house was formed as a reward for the great acts of their founder after a military victory, personal achievement,or act of heroism.',
       name: 'gloryFounding',
       desc: '',
       args: [],
     );
   }
 
-  /// `Conquest`
+  /// `Your family gained noble status by defeating another lord or landed knight.`
   String get conquestFounding {
     return Intl.message(
-      'Conquest',
+      'Your family gained noble status by defeating another lord or landed knight.',
       name: 'conquestFounding',
       desc: '',
       args: [],
     );
   }
 
-  /// `Windfall`
+  /// `Your family won its lands by attaining a victory at a tournament, performing a great act, or something else of the like.`
   String get windfallFounding {
     return Intl.message(
-      'Windfall',
+      'Your family won its lands by attaining a victory at a tournament, performing a great act, or something else of the like.',
       name: 'windfallFounding',
       desc: '',
       args: [],

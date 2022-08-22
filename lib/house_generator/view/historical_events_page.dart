@@ -84,14 +84,13 @@ class AttributeRow extends StatelessWidget {
               height: 16.0,
             ),
             Text(
-              'Infraestructura',
+              l10n.ascent,
               style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 8.0,
             ),
-            Text(
-                'Description of the historical event and its influence on the house'),
+            Text(l10n.ascentFounding),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
