@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:house_generator/core/enums/historical_events.dart';
 import 'package:house_generator/data/attributes_model.dart';
 
 import '../core/enums/regions.dart';
@@ -14,6 +15,8 @@ abstract class HouseLocalDataSource {
   int increaseValues({required int value});
 
   AttributesModel getEmptyValues();
+
+  AttributesModel getHistoricalResult({required HistoricalEvents event});
 }
 
 class HouseLocalDataSourceImpl implements HouseLocalDataSource {
@@ -185,5 +188,148 @@ class HouseLocalDataSourceImpl implements HouseLocalDataSource {
   @override
   int increaseValues({required int value}) {
     return value + getDiceValue(numberOfDices: 1);
+  }
+
+  @override
+  AttributesModel getHistoricalResult({required HistoricalEvents event}) {
+    switch (event) {
+      case HistoricalEvents.doom:
+        return AttributesModel(
+            lands: -(getDiceValue(numberOfDices: 2)),
+            defense: -(getDiceValue(numberOfDices: 2)),
+            influence: -(getDiceValue(numberOfDices: 2)),
+            law: -(getDiceValue(numberOfDices: 2)),
+            population: -(getDiceValue(numberOfDices: 2)),
+            power: -(getDiceValue(numberOfDices: 2)),
+            wealth: -(getDiceValue(numberOfDices: 2)));
+      case HistoricalEvents.defeat:
+        return AttributesModel(
+            lands: -(getDiceValue(numberOfDices: 1)),
+            defense: -(getDiceValue(numberOfDices: 1)),
+            influence: -(getDiceValue(numberOfDices: 1)),
+            law: 0,
+            population: -(getDiceValue(numberOfDices: 1)),
+            power: -(getDiceValue(numberOfDices: 1)),
+            wealth: -(getDiceValue(numberOfDices: 1)));
+      case HistoricalEvents.catastrophe:
+        return AttributesModel(
+            lands: 0,
+            defense: 0,
+            influence: 0,
+            law: -(getDiceValue(numberOfDices: 1)),
+            population: -(getDiceValue(numberOfDices: 1)),
+            power: -(getDiceValue(numberOfDices: 1)),
+            wealth: -(getDiceValue(numberOfDices: 1)));
+      case HistoricalEvents.madness:
+        return AttributesModel(
+            lands: 6 - (getDiceValue(numberOfDices: 2)),
+            defense: 6 - (getDiceValue(numberOfDices: 2)),
+            influence: 6 - (getDiceValue(numberOfDices: 2)),
+            law: 6 - (getDiceValue(numberOfDices: 2)),
+            population: 6 - (getDiceValue(numberOfDices: 2)),
+            power: 6 - (getDiceValue(numberOfDices: 2)),
+            wealth: 6 - (getDiceValue(numberOfDices: 2)));
+      case HistoricalEvents.invasionRevolt:
+        return AttributesModel(
+            lands: 0,
+            defense: 0,
+            influence: 0,
+            law: -(getDiceValue(numberOfDices: 2)),
+            population: -(getDiceValue(numberOfDices: 1)),
+            power: -(getDiceValue(numberOfDices: 1)),
+            wealth: -(getDiceValue(numberOfDices: 1)));
+      case HistoricalEvents.scandal:
+        return AttributesModel(
+            lands: -(getDiceValue(numberOfDices: 1)),
+            defense: 0,
+            influence: -(getDiceValue(numberOfDices: 1)),
+            law: 0,
+            population: 0,
+            power: -(getDiceValue(numberOfDices: 1)),
+            wealth: 0);
+      case HistoricalEvents.treachery:
+        return AttributesModel(
+            lands: 0,
+            defense: 0,
+            influence: -(getDiceValue(numberOfDices: 1)),
+            law: -(getDiceValue(numberOfDices: 1)),
+            population: 0,
+            power: (getDiceValue(numberOfDices: 1)),
+            wealth: 0);
+      case HistoricalEvents.decline:
+        return AttributesModel(
+            lands: -(getDiceValue(numberOfDices: 1)),
+            defense: 0,
+            influence: -(getDiceValue(numberOfDices: 1)),
+            law: 0,
+            population: 0,
+            power: -(getDiceValue(numberOfDices: 1)),
+            wealth: -(getDiceValue(numberOfDices: 1)));
+      case HistoricalEvents.ascent:
+        return AttributesModel(
+            lands: 0,
+            defense: (getDiceValue(numberOfDices: 1)),
+            influence: (getDiceValue(numberOfDices: 1)),
+            law: 0,
+            population: 0,
+            power: (getDiceValue(numberOfDices: 1)),
+            wealth: (getDiceValue(numberOfDices: 1)));
+      case HistoricalEvents.favor:
+        return AttributesModel(
+            lands: 0,
+            defense: (getDiceValue(numberOfDices: 1)),
+            influence: (getDiceValue(numberOfDices: 1)),
+            law: (getDiceValue(numberOfDices: 1)),
+            population: 0,
+            power: (getDiceValue(numberOfDices: 1)),
+            wealth: 0);
+      case HistoricalEvents.victory:
+        return AttributesModel(
+            lands: 0,
+            defense: (getDiceValue(numberOfDices: 1)),
+            influence: (getDiceValue(numberOfDices: 1)),
+            law: 0,
+            population: 0,
+            power: (getDiceValue(numberOfDices: 1)),
+            wealth: 0);
+      case HistoricalEvents.villain:
+        return AttributesModel(
+            lands: 0,
+            defense: 0,
+            influence: (getDiceValue(numberOfDices: 1)),
+            law: -(getDiceValue(numberOfDices: 1)),
+            population: -(getDiceValue(numberOfDices: 1)),
+            power: (getDiceValue(numberOfDices: 1)),
+            wealth: 0);
+      case HistoricalEvents.glory:
+        return AttributesModel(
+            lands: 0,
+            defense: (getDiceValue(numberOfDices: 1)),
+            influence: (getDiceValue(numberOfDices: 1)),
+            law: (getDiceValue(numberOfDices: 1)),
+            population: 0,
+            power: (getDiceValue(numberOfDices: 1)),
+            wealth: 0);
+      case HistoricalEvents.conquest:
+        return AttributesModel(
+            lands: (getDiceValue(numberOfDices: 1)),
+            defense: -(getDiceValue(numberOfDices: 1)),
+            influence: (getDiceValue(numberOfDices: 1)),
+            law: -(getDiceValue(numberOfDices: 1)),
+            population: (getDiceValue(numberOfDices: 1)),
+            power: 0,
+            wealth: (getDiceValue(numberOfDices: 1)));
+      case HistoricalEvents.windfall:
+        return AttributesModel(
+            lands: (getDiceValue(numberOfDices: 1)),
+            defense: (getDiceValue(numberOfDices: 1)),
+            influence: (getDiceValue(numberOfDices: 2)),
+            law: (getDiceValue(numberOfDices: 1)),
+            population: (getDiceValue(numberOfDices: 1)),
+            power: (getDiceValue(numberOfDices: 2)),
+            wealth: (getDiceValue(numberOfDices: 2)));
+      default:
+        throw Exception();
+    }
   }
 }

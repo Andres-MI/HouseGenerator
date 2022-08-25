@@ -5,8 +5,8 @@ import 'package:house_generator/widgets/attribute_shield.dart';
 
 import '../../domain/attributes.dart';
 
-class HistoricalEvents extends StatelessWidget {
-  HistoricalEvents({Key? key}) : super(key: key);
+class HistoricalEventsPage extends StatelessWidget {
+  HistoricalEventsPage({Key? key}) : super(key: key);
   final List<Attributes> attributeList = [
     Attributes(
         lands: 0,
@@ -44,9 +44,10 @@ class HistoricalEvents extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Historical Events'),
+        title: Text(l10n.eventsTitle),
         backgroundColor: Colors.lightBlueAccent,
       ),
       body: ListView.builder(
@@ -87,7 +88,7 @@ class AttributeRow extends StatelessWidget {
               l10n.ascent,
               style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8.0,
             ),
             Text(l10n.ascentFounding),

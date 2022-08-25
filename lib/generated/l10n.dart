@@ -350,6 +350,16 @@ class S {
     );
   }
 
+  /// `Historical Events`
+  String get eventsTitle {
+    return Intl.message(
+      'Historical Events',
+      name: 'eventsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Doom`
   String get doom {
     return Intl.message(

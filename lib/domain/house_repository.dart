@@ -1,5 +1,6 @@
 import 'package:house_generator/domain/attributes.dart';
 
+import '../core/enums/historical_events.dart';
 import '../core/enums/regions.dart';
 
 abstract class HouseRepository {
@@ -11,4 +12,6 @@ abstract class HouseRepository {
 
   Attributes increaseValue(
       {required Attributes attr, required int attrPosition});
+
+  Attributes getHistoricalEventResult({required HistoricalEvents event});
 }

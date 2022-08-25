@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const HouseGeneratorPage(),
         '/house_details': (context) => const HouseDetailsPage(),
-        '/house_events': (context) => HistoricalEvents()
+        '/house_events': (context) => HistoricalEventsPage()
       },
     );
   }

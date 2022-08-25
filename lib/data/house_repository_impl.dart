@@ -1,3 +1,4 @@
+import 'package:house_generator/core/enums/historical_events.dart';
 import 'package:house_generator/data/house_local_data_source.dart';
 import 'package:house_generator/domain/attributes.dart';
 
@@ -57,6 +58,22 @@ class HouseRepositoryImpl implements HouseRepository {
             wealth: localDataSource.increaseValues(value: attr.wealth));
       default:
         return attr;
+    }
+  }
+
+  @override
+  Attributes getHistoricalEventResult({required HistoricalEvents event}) {
+    if (event != HistoricalEvents.infrastructure) {
+      return localDataSource.getHistoricalResult(event: event);
+    } else {
+      return Attributes(
+          lands: 0,
+          defense: 0,
+          influence: 0,
+          law: 0,
+          population: 0,
+          power: 0,
+          wealth: 0);
     }
   }
 }

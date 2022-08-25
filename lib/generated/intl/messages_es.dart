@@ -59,6 +59,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "dorne": MessageLookupByLibrary.simpleMessage("Dorne"),
         "dragonstone": MessageLookupByLibrary.simpleMessage("Rocadragón"),
         "established": MessageLookupByLibrary.simpleMessage("Arraigada"),
+        "eventsTitle":
+            MessageLookupByLibrary.simpleMessage("Eventos Históricos"),
         "favor": MessageLookupByLibrary.simpleMessage("Favor"),
         "favorDescription": MessageLookupByLibrary.simpleMessage(
             "Vuestra familia consiguió el favor del Rey, de sus eñor, de la Fe o de alguna entidad importante. Como resultado sus fortunas y estatus mejoraron."),
