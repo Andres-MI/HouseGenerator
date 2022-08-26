@@ -1,4 +1,6 @@
-import 'package:house_generator/core/enums/historical_events.dart';
+import 'dart:math';
+
+import 'package:house_generator/core/enums/house_age.dart';
 import 'package:house_generator/data/house_local_data_source.dart';
 import 'package:house_generator/domain/attributes.dart';
 
@@ -62,18 +64,25 @@ class HouseRepositoryImpl implements HouseRepository {
   }
 
   @override
-  Attributes getHistoricalEventResult({required HistoricalEvents event}) {
-    if (event != HistoricalEvents.infrastructure) {
-      return localDataSource.getHistoricalResult(event: event);
-    } else {
-      return Attributes(
-          lands: 0,
-          defense: 0,
-          influence: 0,
-          law: 0,
-          population: 0,
-          power: 0,
-          wealth: 0);
+  Attributes getHistoricalEventResult({required HouseAge age}) {
+    int numberOfEvents = Random().nextInt(7);
+    switch (age) {
+      case HouseAge.ancient:
+        numberOfEvents = numberOfEvents + 3;
+        break;
+      case HouseAge.veryOld:
+        numberOfEvents = numberOfEvents + 2;
+        break;
+      case HouseAge.established:
+        numberOfEvents = numberOfEvents;
+        break;
+      case HouseAge.recent:
+        numberOfEvents = (numberOfEvents - 1) > 0 ? numberOfEvents - 1 : 1;
+        break;
+      case HouseAge.newHouse:
+        numberOfEvents = (numberOfEvents - 2) > 0 ? numberOfEvents - 2 : 1;
+        break;
     }
+    throw Exception('Return Incomplete');
   }
 }

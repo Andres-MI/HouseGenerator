@@ -4,6 +4,7 @@ import 'package:house_generator/l10n/l10n.dart';
 import 'package:house_generator/widgets/attribute_shield.dart';
 
 import '../../domain/attributes.dart';
+import '../../domain/house.dart';
 
 class HistoricalEventsPage extends StatelessWidget {
   HistoricalEventsPage({Key? key}) : super(key: key);
@@ -41,6 +42,21 @@ class HistoricalEventsPage extends StatelessWidget {
         power: 10,
         wealth: 5)
   ];
+
+  @override
+  Widget build(BuildContext context) {
+    House house = ModalRoute.of(context)!.settings.arguments as House;
+    return HistoricalEventsWidget(attributeList: attributeList);
+  }
+}
+
+class HistoricalEventsWidget extends StatelessWidget {
+  const HistoricalEventsWidget({
+    Key? key,
+    required this.attributeList,
+  }) : super(key: key);
+
+  final List<Attributes> attributeList;
 
   @override
   Widget build(BuildContext context) {
