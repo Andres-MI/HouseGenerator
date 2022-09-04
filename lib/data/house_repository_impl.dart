@@ -5,6 +5,7 @@ import 'package:house_generator/data/house_local_data_source.dart';
 import 'package:house_generator/domain/attributes.dart';
 
 import '../core/enums/regions.dart';
+import '../domain/historical_entity.dart';
 import '../domain/house_repository.dart';
 
 class HouseRepositoryImpl implements HouseRepository {
@@ -64,7 +65,7 @@ class HouseRepositoryImpl implements HouseRepository {
   }
 
   @override
-  Attributes getHistoricalEventResult({required HouseAge age}) {
+  List<HistoricalEntity> getHistoricalEventResult({required HouseAge age}) {
     int numberOfEvents = Random().nextInt(7);
     switch (age) {
       case HouseAge.ancient:

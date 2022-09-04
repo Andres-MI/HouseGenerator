@@ -102,7 +102,8 @@ class AttributeRow extends StatelessWidget {
             ),
             Text(
               l10n.ascent,
-              style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
+              style:
+                  const TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               height: 8.0,

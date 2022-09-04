@@ -8,3 +8,12 @@ class HistoricalEventsInitial extends HistoricalEventsState {
   @override
   List<Object> get props => [];
 }
+
+class HistoricalEventsLoaded extends HistoricalEventsState {
+  final List<HistoricalEntity> eventList;
+
+  const HistoricalEventsLoaded({required this.eventList});
+
+  @override
+  List<Object> get props => [eventList];
+}
